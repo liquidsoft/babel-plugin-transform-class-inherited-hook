@@ -1,4 +1,6 @@
-# babel-plugin-transform-class-inherited-hook
+# babel-plugin-transform-class-inherited-hook-forked
+This fork fixes an error with Safari for Windows and potentially other browsers where defining the property "name" to a function throws an error.
+Check the original version [here](https://www.npmjs.com/package/babel-plugin-transform-class-inherited-hook)
 
 Babel plugin that transforms subclass declarations to call superclass.onInherited afterwards (if present).
 

@@ -1,16 +1,24 @@
 import template from "babel-template";
 
-module.exports = function({ types: t }) {
-  let SKIP = Symbol();
+module.exports = function ({types: t}) {
+	let SKIP = Symbol();
 
-  function addHelperToFile(file) {
-    var helperName = "__babelPluginTransformClassInheritedHook";
-    if (file.scope.hasBinding(helperName)) return;
+	function addHelperToFile(file) {
+		var helperName = "__babelPluginTransformClassInheritedHook";
+		if (file.scope.hasBinding(helperName)) return;
 
-    var helper = template(`
+		var helper = template(`
       var helper = function(child, parent, childName) {
         if (childName) {
-          Object.defineProperty(child, "name", { value: childName, configurable: true });
+          // There are some issues with Safari for windows and probably other browsers
+          // where assigning the "name" property to a function
+          // throws an error
+          try {
+            Object.defineProperty(child, "name", { value: childName, configurable: true });
+          }
+          catch(err) {
+            // ...
+          }
         }
 
         if ("onInherited" in parent) {
@@ -31,70 +39,70 @@ module.exports = function({ types: t }) {
       }
     `);
 
-    file.scope.push({
-      id: t.identifier(helperName),
-      init: helper().declarations[0].init
-    });
-  }
+		file.scope.push({
+			id: t.identifier(helperName),
+			init: helper().declarations[0].init
+		});
+	}
 
-  function getChildName(path) {
-    if (t.isIdentifier(path.node.id)) {
-      return path.node.id.name;
-    } else if (path.node.id == null && t.isVariableDeclarator(path.parentPath.node)) {
-      return path.parentPath.node.id.name;
-    }
-  }
+	function getChildName(path) {
+		if (t.isIdentifier(path.node.id)) {
+			return path.node.id.name;
+		} else if (path.node.id == null && t.isVariableDeclarator(path.parentPath.node)) {
+			return path.parentPath.node.id.name;
+		}
+	}
 
-  function transform(childClassName, path) {
-    var CHILD = path.scope.generateUidIdentifier(childClassName);
-    var PARENT = path.node.superClass;
-    var CHILD_NAME = childClassName ? t.stringLiteral(childClassName) : t.identifier("undefined");
-    var CLASS_EXPRESSION = t.classExpression(
-      null,
-      PARENT,
-      path.node.body,
-      path.node.decorators || []
-    );
-    // Don't transform *this* class expression, or we'll loop forever
-    CLASS_EXPRESSION[SKIP] = true;
+	function transform(childClassName, path) {
+		var CHILD = path.scope.generateUidIdentifier(childClassName);
+		var PARENT = path.node.superClass;
+		var CHILD_NAME = childClassName ? t.stringLiteral(childClassName) : t.identifier("undefined");
+		var CLASS_EXPRESSION = t.classExpression(
+			null,
+			PARENT,
+			path.node.body,
+			path.node.decorators || []
+		);
+		// Don't transform *this* class expression, or we'll loop forever
+		CLASS_EXPRESSION[SKIP] = true;
 
-    return template(`
+		return template(`
       (function(){
         var CHILD = CLASS_EXPRESSION;
         return __babelPluginTransformClassInheritedHook(CHILD, PARENT, CHILD_NAME);
       })();
     `)({
-      CHILD,
-      CLASS_EXPRESSION,
-      PARENT,
-      CHILD_NAME
-    });
-  }
+			CHILD,
+			CLASS_EXPRESSION,
+			PARENT,
+			CHILD_NAME
+		});
+	}
 
-  return {
-    visitor: {
-      "ClassDeclaration|ClassExpression"(path, state) {
-        if (!path.node.superClass) return;
-        if (path.node[SKIP]) return;
+	return {
+		visitor: {
+			"ClassDeclaration|ClassExpression"(path, state) {
+				if (!path.node.superClass) return;
+				if (path.node[SKIP]) return;
 
-        addHelperToFile(state.file);
-        var childClassName = getChildName(path);
-        var expressionStatement = transform(childClassName, path);
+				addHelperToFile(state.file);
+				var childClassName = getChildName(path);
+				var expressionStatement = transform(childClassName, path);
 
-        if (t.isClassDeclaration(path.node)) {
-          path.replaceWith(t.variableDeclaration(
-            "let",
-            [
-              t.variableDeclarator(
-                t.identifier(childClassName),
-                expressionStatement.expression
-              )
-            ]
-          ));
-        } else if (t.isClassExpression(path.node)) {
-          path.replaceWith(expressionStatement.expression);
-        }
-      }
-    }
-  }
+				if (t.isClassDeclaration(path.node)) {
+					path.replaceWith(t.variableDeclaration(
+						"let",
+						[
+							t.variableDeclarator(
+								t.identifier(childClassName),
+								expressionStatement.expression
+							)
+						]
+					));
+				} else if (t.isClassExpression(path.node)) {
+					path.replaceWith(expressionStatement.expression);
+				}
+			}
+		}
+	}
 }
