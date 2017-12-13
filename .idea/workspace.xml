@@ -21,64 +21,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-92">
-              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state relative-caret-position="52">
+              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="52">
-                <caret line="2" column="108" lean-forward="false" selection-start-line="2" selection-start-column="108" selection-end-line="2" selection-end-column="108" />
-                <folding>
-                  <marker date="1513176259222" expanded="true" signature="477:514" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="493:512" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="564:1819" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="660:705" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="678:701" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="912:1746" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="990:1615" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="1167:1550" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="1339:1440" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="1621:1742" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="2387:2520" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="2417:2518" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="2611:3155" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="2690:2712" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="2716:2827" ph="//..." />
-                  <marker date="1513176259222" expanded="true" signature="2851:2873" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="2903:3153" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="2986:3149" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="2994:3115" ph="//..." />
-                  <marker date="1513176259222" expanded="true" signature="3188:3345" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="3218:3251" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="3276:3308" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="3330:3343" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="3347:3522" ph="//..." />
-                  <marker date="1513176259222" expanded="true" signature="3662:3720" ph="..." />
-                  <marker date="1513176259222" expanded="true" signature="3771:3957" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="3801:3953" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="4008:4061" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="4272:4462" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="4302:4460" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="4308:4413" ph="//..." />
-                  <marker date="1513176259222" expanded="true" signature="4492:4568" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="4735:5000" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="4751:4998" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="4783:4974" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="5040:5042" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="5450:5501" ph="{...}" />
-                  <marker date="1513176259222" expanded="true" signature="5662:5711" ph="{...}" />
-                </folding>
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -89,8 +37,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.npmignore" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -141,11 +91,6 @@
               <item name="babel-plugin-transform-class-inherited-hook" type="b2602c69:ProjectViewProjectNode" />
               <item name="babel-plugin-transform-class-inherited-hook" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="babel-plugin-transform-class-inherited-hook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="babel-plugin-transform-class-inherited-hook" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -183,12 +128,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513175836833</updated>
-      <workItem from="1513175838475" duration="417000" />
+      <workItem from="1513175838475" duration="555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="417000" />
+    <option name="totallyTimeSpent" value="555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -233,19 +178,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="52">
-            <caret line="2" column="108" lean-forward="false" selection-start-line="2" selection-start-column="108" selection-end-line="2" selection-end-column="108" />
+          <first_editor relative-caret-position="182">
+            <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
             <folding>
               <marker date="1513176259222" expanded="true" signature="477:514" ph="{...}" />
               <marker date="1513176259222" expanded="true" signature="493:512" ph="{...}" />
@@ -288,6 +225,30 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.npmignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
